@@ -1,0 +1,62 @@
+# 中国海洋预警等级阈值（可据本单位细则调整）
+# 参考：《风暴潮、海浪、海冰和海啸灾害应急预案》及相关业务规范
+
+datum:
+  surge_reference: "平均海面增水"
+  description: "风暴潮增水相对平均海面的高度"
+
+levels:
+  - id: none
+    name: 无警
+    color: 无
+  - id: blue
+    name: 蓝色
+    color: 蓝
+  - id: yellow
+    name: 黄色
+    color: 黄
+  - id: orange
+    name: 橙色
+    color: 橙
+  - id: red
+    name: 红色
+    color: 红
+
+# 有效波高 (m) - 海浪警报
+wave:
+  unit: m
+  thresholds:
+    blue: 2.5
+    yellow: 3.5
+    orange: 4.5
+    red: 6.0
+  reference: "有效波高分级（业务常用阈值）"
+
+# 风暴潮增水 (m)
+surge:
+  unit: m
+  thresholds:
+    blue: 0.30
+    yellow: 0.50
+    orange: 0.80
+    red: 1.20
+  reference: "风暴潮增水分级（相对平均海面）"
+
+# 海上大风 - 平均风速 (m/s)，约对应蒲福 6/8/10/12 级
+wind:
+  unit: "m/s"
+  thresholds:
+    blue: 10.8
+    yellow: 17.2
+    orange: 24.5
+    red: 32.7
+  reference: "海上大风平均风速分级"
+
+comprehensive_strategy: max_level
+
+advice:
+  none: "海况总体平稳，可正常开展海上作业，请关注最新预报。"
+  blue: "海况有所增强，海上作业人员注意安全，小型船舶建议回港避风。"
+  yellow: "海况较差，停止海上养殖、建筑施工等作业，船舶回港避风。"
+  orange: "海况恶劣，停止一切海上作业，加固港口设施，人员撤离至安全地带。"
+  red: "海况极其危险，全面停止海上活动，启动最高级别防御响应。"

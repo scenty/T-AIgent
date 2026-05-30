@@ -1,0 +1,8 @@
+openai
+xarray
+numpy
+netCDF4
+pyyaml
+jinja2
+docxtpl
+python-docx

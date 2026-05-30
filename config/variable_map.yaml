@@ -1,0 +1,62 @@
+# 多来源变量名映射到标准要素
+elements:
+  wind:
+    canonical: wind_speed
+    variables:
+      - uwnd
+      - vwnd
+      - u10
+      - v10
+      - wind_speed
+      - ws
+      - speed
+    unit: "m/s"
+  wave:
+    canonical: swh
+    variables:
+      - swh
+      - hs
+      - wave_height
+      - significant_wave_height
+      - Hs
+    unit: "m"
+  surge:
+    canonical: surge
+    variables:
+      - ssh
+      - surge
+      - storm_surge
+      - zeta
+      - eta
+    unit: "m"
+
+# 路径关键词辅助分类
+path_keywords:
+  wind:
+    - wind
+    - 风
+  wave:
+    - wave
+    - 浪
+    - swh
+  surge:
+    - surge
+    - 潮
+    - ssh
+    - 风暴潮
+  large_grid:
+    - coarse
+    - 大网格
+    - global
+  small_grid:
+    - fine
+    - 小网格
+    - regional
+  point_ai:
+    - point
+    - 单点
+    - station
+  field_ai:
+    - ai
+    - 智能
+    - ml

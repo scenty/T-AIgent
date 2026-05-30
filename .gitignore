@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# 运行时生成
+cache/
+output/
+
+# IDE
+.idea/
+.vscode/
+.cursor/
+
+# 系统
+.DS_Store
+*.swp

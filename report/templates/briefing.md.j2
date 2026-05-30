@@ -1,0 +1,51 @@
+# {{ title }}
+
+**区域**: {{ region }}  
+**预报时效**: {{ time_label }}  
+**生成时间**: {{ generated_at }}
+
+---
+
+## 一、数据来源
+
+{% if data_sources %}
+{% for src in data_sources %}
+- {{ src }}
+{% endfor %}
+{% else %}
+- 基于当前会话加载的 NetCDF 预报产品
+{% endif %}
+
+## 二、海况概况
+
+{% if stats_summary %}
+| 变量 | 统计值 | 单位 |
+|------|--------|------|
+{% for s in stats_summary %}
+| {{ s.query.variable if s.query else '—' }} | {{ s.result.value if s.result else '—' }} | {{ s.result.units if s.result else '' }} |
+{% endfor %}
+{% else %}
+{% for a in assessments %}
+- **{{ a.element }}**: {{ a.value }} {{ a.unit }}
+{% endfor %}
+{% endif %}
+
+## 三、风险等级
+
+**综合风险等级: {{ comprehensive_level }}**
+
+{% for a in assessments %}
+- {{ a.element }}: {{ a.value }} {{ a.unit }} → **{{ a.level_name }}**
+{% endfor %}
+
+## 四、影响分析
+
+{{ impact_analysis }}
+
+## 五、建议措施
+
+{{ advice }}
+
+---
+
+*{{ disclaimer }}*

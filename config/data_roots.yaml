@@ -1,0 +1,18 @@
+# 本地 NC 数据根目录列表，可按实际路径修改
+roots:
+  - path: /data/ocean
+    description: 海洋预报数据主目录
+  - path: ./sample_data
+    description: 示例/测试数据目录
+
+# 扫描选项
+scan:
+  extensions:
+    - .nc
+    - .nc4
+  exclude_patterns:
+    - "**/tmp/**"
+    - "**/.cache/**"
+
+# 大/小网格判定阈值（单维格点数）
+grid_threshold: 100
