@@ -1,0 +1,1314 @@
+{
+  "tree": {
+    "path": "/group3/",
+    "type": "dir",
+    "children": [
+      {
+        "path": "/group3/EC_wind",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/EC_wind/20260530000000_ECMWF_wind_msl.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/EC_wind/20260529000000_ECMWF_wind_msl.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/EC_wind/20260528000000_ECMWF_wind_msl.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/EC_wind/20260527000000_ECMWF_wind_msl.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/EC_wind/20260526000000_ECMWF_wind_msl.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/forcast_wave",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/forcast_wave/typhoon_0722",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/20250215atm_hour1h_noLandMask.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/20250214atm_hour1h_noLandMask.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/20250213atm_hour1h_noLandMask.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/20250212atm_hour1h_noLandMask.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/forcast_wave/20250211atm_hour1h_noLandMask.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/ocn",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/ocn/typhoon_1006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1011",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1013",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1111",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1209",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1307",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1312",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/ocn_forecast_20250817.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/ocn_forecast_20250816.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/ocn_forecast_20250815.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/ocn_forecast_20250814.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/ocn/ocn_forecast_20250813.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/regional_prediction",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/regional_prediction/evaluation",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/regional_prediction/readme.txt",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/regional_prediction/typhoon_2403.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/regional_prediction/typhoon_2311.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/regional_prediction/typhoon_2305.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/regional_prediction/typhoon_2109.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/res_ATM_new_wave",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/res_ATM_new_wave/typhoon_2501",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/typhoon_2504",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/typhoon_2511",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/typhoon_2526",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/20250222_wave_forecast_1h.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/20250223_wave_forecast_1h.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/20250224_wave_forecast_1h.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/20250225_wave_forecast_1h.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/res_ATM_new_wave/20250227_wave_forecast_1h.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/shared_wind_inputs",
+        "type": "dir",
+        "children": [],
+        "description": ""
+      },
+      {
+        "path": "/group3/shared_wind_inputs_news",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/shared_wind_inputs_news/OLD",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/shared_wind_inputs_news/atm_forecast_20250805.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/shared_wind_inputs_news/atm_forecast_20250806.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/shared_wind_inputs_news/atm_forecast_20250807.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/shared_wind_inputs_news/atm_forecast_20250808.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/shared_wind_inputs_news/atm_forecast_20250809.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/storm_surge_field",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/storm_surge_field/typhoon_1006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1011",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1013",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1111",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1209",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1307",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1312",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2511",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field/typhoon_2526",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/storm_surge_field_station",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1011",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1013",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1111",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1209",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1307",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1312",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2511",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_field_station/typhoon_2526",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/storm_surge_point",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/storm_surge_point/typhoon_1006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1011",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1013",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1111",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1209",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1307",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1312",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2418",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2420",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2421",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2504",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2511",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2524",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/typhoon_2526",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point/readme.txt",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/storm_surge_point_v2",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2504",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2511",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/typhoon_2524",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/storm_surge_forecast_sp_DSN_20251110-20251116.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/storm_surge_forecast_sp_XMN_20251110-20251116.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/storm_surge_forecast_sp_JNJ_20251110-20251116.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/storm_surge_forecast_sp_CWU_20251110-20251116.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_point_v2/storm_surge_forecast_sp_XMN_20251110-20251116_ecnew.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/storm_surge_test",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/storm_surge_test/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_test/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/storm_surge_test/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/TC_wave_point",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/TC_wave_point/code",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/TC_wave_point/wave",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/TC_wave_point/readme.txt",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/validate_wave",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/validate_wave/typhoon_1006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1011",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1013",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1111",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1307",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1312",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1410",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1513",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1521",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1601",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1614",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1617",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1709",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1710",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_1808",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_2006",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_2109",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/validate_wave/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/wind",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/wind/typhoon_2305",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/typhoon_2311",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/typhoon_2403",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/typhoon_2526",
+            "type": "dir",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/atm_forecast_20260515.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/atm_forecast_20260514.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/atm_forecast_20260513.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/atm_forecast_20260512.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind/atm_forecast_20260511.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/wind_new",
+        "type": "dir",
+        "children": [
+          {
+            "path": "/group3/wind_new/atm_forecast_20250816.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind_new/atm_forecast_20250815.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind_new/atm_forecast_20250814.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind_new/atm_forecast_20250813.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          },
+          {
+            "path": "/group3/wind_new/atm_forecast_20250810.nc",
+            "type": "file",
+            "children": [],
+            "description": ""
+          }
+        ],
+        "description": ""
+      },
+      {
+        "path": "/group3/readme.txt",
+        "type": "file",
+        "children": [],
+        "description": ""
+      }
+    ],
+    "description": ""
+  }
+}

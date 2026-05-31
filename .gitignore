@@ -19,3 +19,6 @@ output/
 # 系统
 .DS_Store
 *.swp
+*.nc
+*.npy
+*.zip
