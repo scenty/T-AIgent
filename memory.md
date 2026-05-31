@@ -276,7 +276,7 @@
 ```
 
 ## 文件状态
-- 更新时间: 2026-05-31T12:08:35
+- 更新时间: 2026-05-31T12:23:00
 - 文件总数: 3
 - 索引路径: D:\03-WorkingSync\T-AIgent\cache\nc_catalog.json
 
@@ -303,56 +303,5 @@
       "small_grid": 3
     }
   }
-}
-```
-
-### 2026-05-31T12:08:47 | scan_nc_directories
-- 参数:
-```json
-{}
-```
-- 响应:
-```json
-{
-  "success": true,
-  "scanned_roots": [
-    "\\data\\ocean",
-    "sample_data"
-  ],
-  "missing_roots": [
-    "\\data\\ocean"
-  ],
-  "root_stats": [
-    {
-      "root": "\\data\\ocean",
-      "exists": false,
-      "file_count": 0,
-      "size_bytes": 0
-    },
-    {
-      "root": "sample_data",
-      "exists": true,
-      "file_count": 3,
-      "size_bytes": 2199606
-    }
-  ],
-  "file_count": 3,
-  "files": [
-    {
-      "path": "sample_data\\surge_forecast_large_grid.nc",
-      "root": "sample_data",
-      "size_bytes": 1737443
-    },
-    {
-      "path": "sample_data\\wave_forecast_small_grid.nc",
-      "root": "sample_data",
-      "size_bytes": 297611
-    },
-    {
-      "path": "sample_data\\wind_forecast.nc",
-      "root": "sample_data",
-      "size_bytes": 164552
-    }
-  ]
 }
 ```
