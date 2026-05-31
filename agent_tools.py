@@ -13,11 +13,7 @@ from risk.assessor import (
     get_risk_criteria,
     session_context,
 )
-from report.generator import (
-    generate_briefing_preview,
-    generate_briefing_docx,
-    list_briefing_templates,
-)
+#from report.generator import generate_briefing_preview,generate_briefing_docx,list_briefing_templates
 
 # ---------- Meta 工具 ----------
 META_FUNCTIONS = [
