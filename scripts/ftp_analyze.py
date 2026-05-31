@@ -8,7 +8,7 @@ import json
 HOST = "120.42.36.229"
 PORT = 22210
 USERNAME = "zdyfsjgx"
-PASSWORD = "Sjgx@1234!"
+PASSWORD = ""
 START_PATH = "/group3/"
 MAX_DEPTH = 1  # 0=仅根节点，1=仅列出一级路径
 OUTPUT_FILE = "ftp_tree.json"
