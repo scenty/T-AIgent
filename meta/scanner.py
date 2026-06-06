@@ -88,6 +88,7 @@ def scan_directories(
                         "path": full,
                         "root": str(p),
                         "size_bytes": file_size,
+                        "mtime": os.path.getmtime(full),
                     })
                     root_file_count += 1
                     root_total_size += file_size

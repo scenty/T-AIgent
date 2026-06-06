@@ -8,10 +8,7 @@ import xarray as xr
 
 from analysis.nc_reader import nc_reader
 from analysis.coords import (
-    normalize_longitude,
-    nearest_index,
     select_region,
-    get_coord_value,
     parse_time_index,
 )
 
@@ -42,12 +39,14 @@ def extract_point_stats(
     if _resolve_variable(variable_name) is None:
         return {"success": False, "message": f"变量 '{variable_name}' 不存在"}
 
-    lon = normalize_longitude(longitude, nc_reader.dataset[nc_reader.lon_name].values)
-    lat_idx = nearest_index(nc_reader.dataset[nc_reader.lat_name].values, latitude)
-    lon_idx = nearest_index(nc_reader.dataset[nc_reader.lon_name].values, lon)
-
     var = nc_reader.dataset[variable_name]
-    series = var.isel({nc_reader.lat_name: lat_idx, nc_reader.lon_name: lon_idx})
+    series, out_lat, out_lon, layout_mode = nc_reader.select_series_at_point(var, latitude, longitude)
+    if series is None:
+        return {
+            "success": False,
+            "message": f"变量 '{variable_name}' 维度 {list(var.dims)} 不支持单点统计",
+        }
+
     if nc_reader.time_name and nc_reader.time_name in series.dims:
         if start_time_idx is not None and end_time_idx is not None:
             series = series.isel({nc_reader.time_name: slice(start_time_idx, end_time_idx + 1)})
@@ -60,17 +59,14 @@ def extract_point_stats(
         "success": True,
         "query": {
             "variable": variable_name,
-            "location": {"latitude": latitude, "longitude": longitude},
+            "location": {"latitude": out_lat, "longitude": out_lon},
             "stat": stat,
             "time_range_idx": [start_time_idx, end_time_idx],
         },
         "result": {"value": value, "units": var.attrs.get("units", "未知")},
         "metadata": {
             "file": nc_reader.file_path,
-            "grid_point": {
-                "latitude": get_coord_value(nc_reader.dataset, nc_reader.lat_name, lat_idx),
-                "longitude": get_coord_value(nc_reader.dataset, nc_reader.lon_name, lon_idx),
-            },
+            "layout_mode": layout_mode,
             "n_samples": len(values.flatten()),
         },
     }
@@ -157,11 +153,10 @@ def extract_extreme_events(
 def extract_point_series_raw(
     variable_name, longitude, latitude, start_time_idx, end_time_idx
 ):
-    lon = normalize_longitude(longitude, nc_reader.dataset[nc_reader.lon_name].values)
-    lat_idx = nearest_index(nc_reader.dataset[nc_reader.lat_name].values, latitude)
-    lon_idx = nearest_index(nc_reader.dataset[nc_reader.lon_name].values, lon)
     var = nc_reader.dataset[variable_name]
-    series = var.isel({nc_reader.lat_name: lat_idx, nc_reader.lon_name: lon_idx})
+    series, _, _, _ = nc_reader.select_series_at_point(var, latitude, longitude)
+    if series is None:
+        return {"success": False, "message": f"变量 '{variable_name}' 不支持时间序列提取"}
     if nc_reader.time_name and nc_reader.time_name in series.dims:
         if start_time_idx is not None and end_time_idx is not None:
             series = series.isel({nc_reader.time_name: slice(start_time_idx, end_time_idx + 1)})

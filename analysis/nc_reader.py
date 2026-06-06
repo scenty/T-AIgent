@@ -15,6 +15,13 @@ from analysis.coords import (
 )
 
 
+def _scalar_coord_value(ds, name):
+    if not name or name not in ds:
+        return None
+    val = ds[name].values
+    return float(val) if val.ndim == 0 else float(val.flat[0])
+
+
 class NCFileReader:
     def __init__(self):
         self.dataset = None
@@ -27,6 +34,47 @@ class NCFileReader:
         if self.dataset is not None:
             self.lat_name, self.lon_name, self.time_name = get_lat_lon_time_names(self.dataset)
 
+    def _dataset_summary(self) -> Dict[str, Any]:
+        summary = {
+            "dimensions": dict(self.dataset.sizes),
+            "variables": list(self.dataset.data_vars.keys()),
+            "coordinates": list(self.dataset.coords.keys()),
+            "global_attributes": {k: str(v) for k, v in self.dataset.attrs.items()},
+            "coord_names": {"lat": self.lat_name, "lon": self.lon_name, "time": self.time_name},
+            "variable_dims": {name: list(self.dataset[name].dims) for name in self.dataset.data_vars},
+        }
+        return summary
+
+    def _file_coord_value(self, name: Optional[str]) -> Optional[float]:
+        return _scalar_coord_value(self.dataset, name)
+
+    def select_series_at_point(self, var, latitude: float, longitude: float):
+        dims = set(var.dims)
+        lat_name, lon_name = self.lat_name, self.lon_name
+
+        if lat_name in dims and lon_name in dims:
+            nlat = var.sizes.get(lat_name, self.dataset.sizes.get(lat_name, 0))
+            nlon = var.sizes.get(lon_name, self.dataset.sizes.get(lon_name, 0))
+            if nlat <= 1 and nlon <= 1:
+                series = var.isel({lat_name: 0, lon_name: 0})
+                out_lat = self._file_coord_value(lat_name) or latitude
+                out_lon = self._file_coord_value(lon_name) or longitude
+                return series, out_lat, out_lon, "grid_1x1"
+            lon = normalize_longitude(longitude, self.dataset[lon_name].values)
+            lat_idx = nearest_index(self.dataset[lat_name].values, latitude)
+            lon_idx = nearest_index(self.dataset[lon_name].values, lon)
+            series = var.isel({lat_name: lat_idx, lon_name: lon_idx})
+            out_lat = get_coord_value(self.dataset, lat_name, lat_idx)
+            out_lon = get_coord_value(self.dataset, lon_name, lon_idx)
+            return series, out_lat, out_lon, "grid"
+
+        if self.time_name and self.time_name in dims:
+            out_lat = self._file_coord_value(lat_name) if lat_name else latitude
+            out_lon = self._file_coord_value(lon_name) if lon_name else longitude
+            return var, out_lat, out_lon, "time_series"
+
+        return None, None, None, "unsupported"
+
     def open_file(self, file_path: str) -> Dict[str, Any]:
         if self.dataset is not None:
             self.dataset.close()
@@ -34,24 +82,27 @@ class NCFileReader:
         self.dataset = xr.open_dataset(file_path)
         self.file_path = file_path
         self._refresh_coords()
+        from meta.data_config import infer_layout_mode, match_root_for_path
+
+        root = match_root_for_path(file_path)
+        root_layout = (root or {}).get("layout")
+        variable_dims = {name: list(self.dataset[name].dims) for name in self.dataset.data_vars}
+        layout_mode = infer_layout_mode(
+            variable_dims, self.lat_name, self.lon_name,
+            dict(self.dataset.sizes), root_layout,
+        )
         return {
             "success": True,
             "message": f"成功打开文件: {file_path}",
             "coords": {"lat": self.lat_name, "lon": self.lon_name, "time": self.time_name},
-            "file_info": str(self.dataset),
+            "layout_mode": layout_mode,
+            "file_info": self._dataset_summary(),
         }
 
     def get_file_info(self) -> Dict[str, Any]:
         if self.dataset is None:
             return {"success": False, "message": "请先打开文件"}
-        info = {
-            "dimensions": dict(self.dataset.sizes),
-            "variables": list(self.dataset.data_vars.keys()),
-            "coordinates": list(self.dataset.coords.keys()),
-            "global_attributes": {k: str(v) for k, v in self.dataset.attrs.items()},
-            "coord_names": {"lat": self.lat_name, "lon": self.lon_name, "time": self.time_name},
-        }
-        return {"success": True, "file_info": info}
+        return {"success": True, "file_info": self._dataset_summary()}
 
     def read_variable(
         self, variable_name: str,
@@ -87,26 +138,34 @@ class NCFileReader:
     ) -> Dict[str, Any]:
         if self.dataset is None:
             return {"success": False, "message": "请先打开文件"}
-        if not self.lat_name or not self.lon_name:
-            return {"success": False, "message": "文件缺少经纬度坐标"}
+        if variable_name not in self.dataset.data_vars:
+            return {"success": False, "message": f"变量 '{variable_name}' 不存在"}
 
-        lon = normalize_longitude(longitude, self.dataset[self.lon_name].values)
-        lat_idx = nearest_index(self.dataset[self.lat_name].values, latitude)
-        lon_idx = nearest_index(self.dataset[self.lon_name].values, lon)
+        var = self.dataset[variable_name]
+        series, out_lat, out_lon, layout_mode = self.select_series_at_point(var, latitude, longitude)
+        if series is None:
+            return {
+                "success": False,
+                "message": f"变量 '{variable_name}' 维度 {list(var.dims)} 不支持按点提取",
+            }
 
-        sel = {self.lat_name: lat_idx, self.lon_name: lon_idx}
-        if time_index is not None and self.time_name:
-            sel[self.time_name] = time_index
-        data = self.dataset[variable_name].isel(**sel)
+        if time_index is not None and self.time_name and self.time_name in series.dims:
+            data = series.isel({self.time_name: time_index})
+        else:
+            data = series
 
         result = {
             "variable": variable_name,
-            "latitude": get_coord_value(self.dataset, self.lat_name, lat_idx),
-            "longitude": get_coord_value(self.dataset, self.lon_name, lon_idx),
+            "latitude": out_lat,
+            "longitude": out_lon,
             "value": float(data.values),
-            "units": self.dataset[variable_name].attrs.get("units", "未知"),
+            "units": var.attrs.get("units", "未知"),
         }
-        return {"success": True, "data": result, "metadata": {"file": self.file_path}}
+        return {
+            "success": True,
+            "data": result,
+            "metadata": {"file": self.file_path, "layout_mode": layout_mode},
+        }
 
     def extract_area_stat(
         self, variable_name: str,
@@ -206,32 +265,34 @@ class NCFileReader:
         if variable_name not in self.dataset.data_vars:
             return {"success": False, "message": f"变量 '{variable_name}' 不存在"}
 
-        lon = normalize_longitude(longitude, self.dataset[self.lon_name].values)
-        lat_idx = nearest_index(self.dataset[self.lat_name].values, latitude)
-        lon_idx = nearest_index(self.dataset[self.lon_name].values, lon)
         var = self.dataset[variable_name]
+        series, out_lat, out_lon, layout_mode = self.select_series_at_point(var, latitude, longitude)
+        if series is None:
+            return {
+                "success": False,
+                "message": f"变量 '{variable_name}' 维度 {list(var.dims)} 不支持时间序列提取",
+            }
 
-        if self.time_name and self.time_name in var.dims:
-            series = var.isel({self.lat_name: lat_idx, self.lon_name: lon_idx})
+        if self.time_name and self.time_name in series.dims:
             if start_time_idx is not None and end_time_idx is not None:
                 series = series.isel({self.time_name: slice(start_time_idx, end_time_idx + 1)})
             times = [str(t) for t in series[self.time_name].values.tolist()] if self.time_name in series.coords else None
             values = series.values.tolist()
         else:
-            values = var.isel({self.lat_name: lat_idx, self.lon_name: lon_idx}).values.tolist()
+            values = [float(series.values)]
             times = None
 
         return {
             "success": True,
             "data": {
                 "variable": variable_name,
-                "longitude": get_coord_value(self.dataset, self.lon_name, lon_idx),
-                "latitude": get_coord_value(self.dataset, self.lat_name, lat_idx),
+                "longitude": out_lon,
+                "latitude": out_lat,
                 "times": times,
                 "values": values,
                 "units": var.attrs.get("units", "未知"),
             },
-            "metadata": {"file": self.file_path},
+            "metadata": {"file": self.file_path, "layout_mode": layout_mode},
         }
 
     def query_by_datetime(self, datetime_str: str) -> Dict[str, Any]:

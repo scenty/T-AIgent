@@ -6,6 +6,7 @@ from analysis import statistics as stats
 from meta.scanner import scan_directories
 from meta.catalog import nc_catalog
 from meta.classifier import extract_file_meta
+from meta.data_config import lookup_station
 from risk.assessor import (
     assess_sea_state,
     assess_comprehensive_risk,
@@ -66,13 +67,27 @@ META_FUNCTIONS = [
     },
     {
         "name": "get_nc_file_detail",
-        "description": "获取单个 NC 文件的详细 meta 信息（维度、变量、分类、时空范围）",
+        "description": "获取单个 NC 文件的详细 meta 信息（维度、变量、layout_mode、station_code、时空范围）",
         "parameters": {
             "type": "object",
             "properties": {
                 "file_path": {"type": "string", "description": "NC 文件完整路径"},
             },
             "required": ["file_path"],
+        },
+    },
+    {
+        "name": "lookup_station",
+        "description": "按站名/别名/file_code/经纬度查询站点，返回 file_code 与 NC 文件名模式（配置见 config/data_roots.yaml）",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string", "description": "站名或别名，如 新竹、新竹浮标"},
+                "file_code": {"type": "string", "description": "NC 文件名编码，如 46757B"},
+                "latitude": {"type": "number"},
+                "longitude": {"type": "number"},
+                "element": {"type": "string", "enum": ["wind", "wave", "surge"], "description": "筛选要素类型"},
+            },
         },
     },
 ]
@@ -375,6 +390,11 @@ def handle_function_call(function_name, arguments):
         return nc_catalog.get_file_detail(args["file_path"]) if nc_catalog.entries else {
             "success": True, "detail": extract_file_meta(args["file_path"])
         }
+    if function_name == "lookup_station":
+        return lookup_station(
+            args.get("name"), args.get("file_code"),
+            args.get("latitude"), args.get("longitude"), args.get("element"),
+        )
 
     # Analysis - nc_reader
     if function_name == "open_nc_file":

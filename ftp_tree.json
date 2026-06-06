@@ -1,0 +1,109 @@
+{
+  "path": "/group3/",
+  "type": "dir",
+  "children": [
+    {
+      "path": "/group3/EC_wind",
+      "type": "dir",
+      "children": [],
+      "description": "业务化的风场，来自ECMWF的预报，低分辨率"
+    },
+    {
+      "path": "/group3/forcast_wave",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/ocn",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/readme.txt",
+      "type": "file",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/regional_prediction",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/res_ATM_new_wave",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/shared_wind_inputs",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/shared_wind_inputs_news",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/storm_surge_field",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/storm_surge_field_station",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/storm_surge_point",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/storm_surge_point_v2",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/storm_surge_test",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/TC_wave_point",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/validate_wave",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/wind",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    },
+    {
+      "path": "/group3/wind_new",
+      "type": "dir",
+      "children": [],
+      "description": ""
+    }
+  ],
+  "description": ""
+}

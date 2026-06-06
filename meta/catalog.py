@@ -24,6 +24,19 @@ PRODUCT_TYPE_LABELS = {
 ELEMENT_LABELS = {"wind": "风场", "wave": "海浪", "surge": "风暴潮"}
 
 
+def _normalize_path_key(path: str) -> str:
+    return str(Path(path)).replace("\\", "/").lower()
+
+
+def _entry_matches_disk(cached: dict, size_bytes: int, mtime: float) -> bool:
+    if cached.get("size_bytes") != size_bytes:
+        return False
+    cached_mtime = cached.get("mtime")
+    if cached_mtime is None:
+        return True
+    return cached_mtime == mtime
+
+
 class NCCatalog:
     def __init__(self):
         self.entries: List[dict] = []
@@ -34,16 +47,39 @@ class NCCatalog:
         if not scan_result.get("success"):
             return scan_result
 
+        cached_by_path: Dict[str, dict] = {}
+        if not force:
+            cached_by_path = self._load_cached_entry_map()
+
         entries = []
         errors = []
+        reused_count = 0
+        new_count = 0
+
         for item in scan_result["files"]:
             path = item["path"]
+            size_bytes = item.get("size_bytes", 0)
+            mtime = item.get("mtime", 0)
+            cache_key = _normalize_path_key(path)
+            cached = cached_by_path.get(cache_key)
+
+            if not force and cached and _entry_matches_disk(cached, size_bytes, mtime):
+                entry = dict(cached)
+                entry["path"] = path
+                entry["size_bytes"] = size_bytes
+                entry["mtime"] = mtime
+                entries.append(entry)
+                reused_count += 1
+                continue
+
             meta = extract_file_meta(path)
             if not meta.get("readable", True):
                 errors.append({"path": path, "error": "unreadable"})
                 continue
-            meta["size_bytes"] = item.get("size_bytes", 0)
+            meta["size_bytes"] = size_bytes
+            meta["mtime"] = mtime
             entries.append(meta)
+            new_count += 1
 
         self.entries = entries
         self._save_cache(entries, scan_result["scanned_roots"])
@@ -55,7 +91,23 @@ class NCCatalog:
             "errors": errors[:20],
             "catalog_path": str(CATALOG_PATH),
             "summary": self._build_summary(entries),
+            "incremental": not force,
+            "reused_count": reused_count,
+            "new_count": new_count,
+            "removed_count": max(0, len(cached_by_path) - reused_count) if cached_by_path else 0,
         }
+
+    def _load_cached_entry_map(self) -> Dict[str, dict]:
+        if not CATALOG_PATH.exists():
+            return {}
+        with open(CATALOG_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        result = {}
+        for entry in data.get("entries", []):
+            path = entry.get("path")
+            if path:
+                result[_normalize_path_key(path)] = entry
+        return result
 
     def load_cache(self) -> bool:
         if not CATALOG_PATH.exists():
@@ -83,8 +135,9 @@ class NCCatalog:
         return {"by_element": by_element, "by_product": by_product}
 
     def get_file_detail(self, file_path: str) -> Dict[str, Any]:
+        key = _normalize_path_key(file_path)
         for e in self.entries:
-            if e.get("path") == file_path:
+            if _normalize_path_key(e.get("path", "")) == key:
                 return {"success": True, "detail": e}
         meta = extract_file_meta(file_path)
         return {"success": True, "detail": meta}

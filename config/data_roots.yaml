@@ -1,11 +1,295 @@
-# 本地 NC 数据根目录列表，可按实际路径修改
-roots:
-  - path: /data/ocean
-    description: 海洋预报数据主目录
-  - path: ./sample_data
-    description: 示例/测试数据目录
+# 本地 NC 数据配置（根目录、站点、layout、变量）
+# 站点来源: AutoWave/Data/station_summary.csv
+# file_code 规则: StationID 去掉首字母 S（S46757B→46757B，SC6AH2→C6AH2）
 
-# 扫描选项
+stations:
+  - station_id: S46694A
+    file_code: "46694A"
+    name: 龙洞浮标
+    aliases: [龙洞, 龙洞浮标]
+    lat: 25.09861111
+    lon: 121.9227778
+    type: buoy
+    elements: [wave]
+
+  - station_id: S46699A
+    file_code: "46699A"
+    name: 花莲浮标
+    aliases: [花莲, 花莲浮标]
+    lat: 24.03138889
+    lon: 121.6322222
+    type: buoy
+    elements: [wave]
+
+  - station_id: S46708A
+    file_code: "46708A"
+    name: 龟山岛浮标
+    aliases: [龟山岛, 龟山岛浮标]
+    lat: 24.84694444
+    lon: 121.9266667
+    type: buoy
+    elements: [wave]
+
+  - station_id: S46714D
+    file_code: "46714D"
+    name: 小琉球浮标
+    aliases: [小琉球, 小琉球浮标]
+    lat: 22.31694444
+    lon: 120.3758333
+    type: buoy
+    elements: [wave]
+
+  - station_id: S46757B
+    file_code: "46757B"
+    name: 新竹浮标
+    aliases: [新竹, 新竹浮标, 新竹站, 台湾新竹]
+    lat: 24.76333333
+    lon: 120.8441667
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6AH2
+    file_code: C6AH2
+    name: 富贵角浮标
+    aliases: [富贵角, 富贵角浮标]
+    lat: 25.30388889
+    lon: 121.5327778
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6B01
+    file_code: C6B01
+    name: 彭佳屿浮标
+    aliases: [彭佳屿, 彭佳屿浮标]
+    lat: 25.62222222
+    lon: 122.0652778
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6F01
+    file_code: C6F01
+    name: 台中浮标
+    aliases: [台中, 台中浮标]
+    lat: 24.23944444
+    lon: 120.4133333
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6S94
+    file_code: C6S94
+    name: 兰屿浮标
+    aliases: [兰屿, 兰屿浮标]
+    lat: 22.06972222
+    lon: 121.5791667
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6V27
+    file_code: C6V27
+    name: 东沙岛浮标
+    aliases: [东沙岛, 东沙岛浮标]
+    lat: 21.05555556
+    lon: 118.8533333
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6W08
+    file_code: C6W08
+    name: 马祖浮标
+    aliases: [马祖, 马祖浮标]
+    lat: 26.35444444
+    lon: 120.5108333
+    type: buoy
+    elements: [wave]
+
+  - station_id: SC6W10
+    file_code: C6W10
+    name: 七美浮标
+    aliases: [七美, 七美浮标]
+    lat: 23.18888889
+    lon: 119.665
+    type: buoy
+    elements: [wave]
+
+  - station_id: S112
+    file_code: null
+    name: 新竹潮位站
+    aliases: [新竹潮位站, 新竹潮位]
+    lat: 24.84861111
+    lon: 120.9205556
+    type: tide
+    elements: [surge]
+
+  - station_id: S113
+    file_code: null
+    name: 外埔潮位站
+    aliases: [外埔, 外埔潮位站]
+    lat: 24.65138889
+    lon: 120.7713889
+    type: tide
+    elements: [surge]
+
+  - station_id: S1156
+    file_code: null
+    name: 萡子寮潮位站
+    aliases: [萡子寮, 萡子寮潮位站]
+    lat: 24.11388889
+    lon: 120.3805556
+    type: tide
+    elements: [surge]
+
+  - station_id: S1176
+    file_code: null
+    name: 将军潮位站
+    aliases: [将军, 将军潮位站]
+    lat: 23.21166667
+    lon: 120.0830556
+    type: tide
+    elements: [surge]
+
+  - station_id: S1186
+    file_code: null
+    name: 东港潮位站
+    aliases: [东港, 东港潮位站]
+    lat: 22.465
+    lon: 120.4383333
+    type: tide
+    elements: [surge]
+
+  - station_id: S12191
+    file_code: null
+    name: 长潭里潮位站
+    aliases: [长潭里, 长潭里潮位站]
+    lat: 25.14055556
+    lon: 121.7997222
+    type: tide
+    elements: [surge]
+
+  - station_id: S1226
+    file_code: null
+    name: 龙洞潮位站
+    aliases: [龙洞潮位站]
+    lat: 25.0975
+    lon: 121.9180556
+    type: tide
+    elements: [surge]
+
+  - station_id: S1246
+    file_code: null
+    name: 苏澳潮位站
+    aliases: [苏澳, 苏澳潮位站]
+    lat: 24.5925
+    lon: 121.8658333
+    type: tide
+    elements: [surge]
+
+  - station_id: S1256
+    file_code: null
+    name: 花莲潮位站
+    aliases: [花莲潮位站]
+    lat: 23.98055556
+    lon: 121.6236111
+    type: tide
+    elements: [surge]
+
+  - station_id: S1276
+    file_code: null
+    name: 成功潮位站
+    aliases: [成功, 成功潮位站]
+    lat: 23.09722222
+    lon: 121.38
+    type: tide
+    elements: [surge]
+
+  - station_id: S1366
+    file_code: null
+    name: 塭港潮位站
+    aliases: [塭港, 塭港潮位站]
+    lat: 23.46666667
+    lon: 120.1225
+    type: tide
+    elements: [surge]
+
+  - station_id: S1386
+    file_code: null
+    name: 小琉球潮位站
+    aliases: [小琉球潮位站]
+    lat: 22.35333333
+    lon: 120.3833333
+    type: tide
+    elements: [surge]
+
+  - station_id: S1396
+    file_code: null
+    name: 兰屿潮位站
+    aliases: [兰屿潮位站]
+    lat: 22.05777778
+    lon: 121.5077778
+    type: tide
+    elements: [surge]
+
+  - station_id: S1516
+    file_code: null
+    name: 基隆潮位站
+    aliases: [基隆, 基隆潮位站]
+    lat: 25.155
+    lon: 121.7522222
+    type: tide
+    elements: [surge]
+
+roots:
+  - path: ./data/dailyforecast/AutoWave/res_EC
+    description: 海浪时空场（AutoWave，EC 驱动）
+    element: wave
+    product_type: field_ai
+    layout:
+      access_mode: grid
+      coord_level: variable
+    variables:
+      wave: [hs_torch, mwp_torch, mwd_torch, uwind_torch, vwind_torch]
+
+  - path: ./data/dailyforecast/storm_surge_for_spatiotemporal
+    description: 风暴潮时空场（surge_predicted_*.nc）
+    element: surge
+    product_type: field_ai
+    layout:
+      access_mode: grid
+      coord_level: variable
+    variables:
+      surge: [surge]
+
+  - path: ./data/dailyforecast/storm_surge_point_system/nc_file
+    description: 风暴潮单点（CWU/DSN/JNJ/XMN 等站点）
+    element: surge
+    product_type: point_ai
+    layout:
+      access_mode: grid_1x1
+      coord_level: variable
+      filename_pattern: "storm_surge_forecast_sp_{station_code}_*.nc"
+    variables:
+      surge: [storm_surge]
+
+  - path: ./data/dailyforecast/wave_for_single_point/outputs/nc_files
+    description: 海浪单点（按日起报，EC_point_wave_*.nc）
+    element: wave
+    product_type: point_ai
+    layout:
+      access_mode: time_series
+      coord_level: file
+      filename_pattern: "EC_point_wave_{station_code}_*.nc"
+    variables:
+      wave: [swh, mwp, mwd]
+
+  - path: ./data/EC_wind
+    description: EC 融合风场（ECMWF_wind_msl.nc）
+    element: wind
+    product_type: large_grid
+    layout:
+      access_mode: grid
+      coord_level: variable
+    variables:
+      wind: [u10, v10, msl]
+
 scan:
   extensions:
     - .nc
@@ -14,5 +298,4 @@ scan:
     - "**/tmp/**"
     - "**/.cache/**"
 
-# 大/小网格判定阈值（单维格点数）
 grid_threshold: 100
